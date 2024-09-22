@@ -26,7 +26,7 @@ pipeline {
                 sh '''
                     npx playwright test --list
                     npx playwright test
-                    tree
+                    find . | sed 's|[^/]*/|- |g'
                 '''
             }
 
