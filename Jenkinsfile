@@ -8,6 +8,7 @@ pipeline {
         stage('install playwright') {
             steps {
                 sh '''
+                    chown -R 501:20 "/.npm"
                     npm i -D @playwright/test
                     npx playwright install
                 '''
