@@ -1,0 +1,9 @@
+FROM mcr.microsoft.com/playwright:v1.46.0-focal
+
+RUN useradd -ms /bin/bash jenkins
+
+USER jenkins
+
+RUN npm install -g @playwright/test
+
+RUN npm config set cache ~/.npm --global

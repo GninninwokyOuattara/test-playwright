@@ -1,4 +1,7 @@
 pipeline {
+    environment {
+        NPM_CONFIG_CACHE = "${WORKSPACE}/.npm"
+    }
     agent {
         docker {
             image 'mcr.microsoft.com/playwright:v1.46.0-focal'
