@@ -4,15 +4,15 @@ pipeline {
     }
     agent {
         docker {
-            image 'mcr.microsoft.com/playwright:v1.46.0-noble'
+            image 'mcr.microsoft.com/playwright:v1.40.1-jammy'
         }
     }
     stages {
         stage('install playwright') {
             steps {
                 sh '''
-                    npx playwright install --with-deps chromium
-                    npx playwright test --project=chromium
+                    npm i -D @playwright/test
+                    npx playwright install
                 '''
             }
         }
