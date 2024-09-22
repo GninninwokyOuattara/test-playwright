@@ -28,13 +28,14 @@ pipeline {
                     npx playwright test
                 '''
             }
+            post {
+                success {
+                    archiveArtifacts(artifacts: './playwright-report/**', followSymlinks: false)
+                    //   sh 'rm -rf *.png'
+                }
+            }
         }
-        post {
-        success {
-          archiveArtifacts(artifacts: './playwright-report/**', followSymlinks: false)
-        //   sh 'rm -rf *.png'
-        }
-      }
+        
     }
 }
 
