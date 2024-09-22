@@ -11,9 +11,8 @@ pipeline {
         stage('install playwright') {
             steps {
                 sh '''
-                    
-                    npm i -D @playwright/test
-                    npx playwright install --project=firefox
+                    npx playwright install --with-deps chromium
+                    npx playwright test --project=chromium
                 '''
             }
         }
