@@ -38,6 +38,11 @@ pipeline {
                     archiveArtifacts(artifacts: 'playwright-report/**', followSymlinks: false)
                     //   sh 'rm -rf *.png'
                 }
+                failure {
+                    publishHTML([allowMissing: false, alwaysLinkToLastBuild: false, keepAll: false, reportDir: 'playwright-report', reportFiles: 'index.html', reportName: 'Résultats de test', reportTitles: '', useWrapperFileDirectly: true])
+                    archiveArtifacts(artifacts: 'playwright-report/**', followSymlinks: false)
+                    //   sh 'rm -rf *.png'
+                }
             }
         }
         
