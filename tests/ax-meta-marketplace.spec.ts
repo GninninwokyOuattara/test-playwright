@@ -9,7 +9,7 @@ test("Le premier produit sur le marketplace et Ax-Meta Pavillon 15", async ({
 	await expect(page.locator("#root")).toContainText("Ax-Meta Pavillon 15");
 });
 
-test("Le premier produit  dans l’onglet des tablettes est Ax-Meta Tab Pro 12.9 pouces", async ({
+test("Le premier produit  dans l’onglet des tablettes est Ax-Meta Tab Pro 912.9 pouces", async ({
 	page,
 }) => {
 	await page.goto("https://ax-meta.com/");
